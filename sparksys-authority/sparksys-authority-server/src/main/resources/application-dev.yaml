@@ -56,7 +56,7 @@ spring:
         min-idle: 0
 dubbo:
   scan:
-    base-packages: com.sparksys.authority.infrastructure.client
+    base-packages: com.sparksys.authority.interfaces.rpc
   # Dubbo 服务暴露的协议配置，对应 ProtocolConfig Map
   protocols:
     dubbo:

@@ -1,4 +1,4 @@
-package com.sparksys.authority.infrastructure.client;
+package com.sparksys.authority.interfaces.rpc;
 
 import com.sparksys.authority.api.UserService;
 import com.sparksys.authority.domain.repository.IAuthUserRepository;
