@@ -1,0 +1,69 @@
+server:
+  shutdown: graceful
+  port: 8902
+  undertow:
+    buffer-size: 1024
+    direct-buffers: on
+    always-set-keep-alive: true
+sparksys:
+  injection:
+    enabled: true
+    aop-enabled: true
+  swagger:
+    group-name: 用户系统模块
+    base-package: com.sparksys.authority.interfaces
+    api-info:
+      title: 用户系统模块
+      description: 用户管理
+      terms-of-service-url: https://www.sparksys.top
+      version: 1.0
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.sparksys.authority.infrastructure.entity
+  type-enums-package: com.sparksys.authority.infrastructure.enums
+  mapperScan: com.sparksys.authority.infrastructure.mapper
+  configuration:
+    map-underscore-to-camel-case: true
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+spring:
+  application:
+    name: sparksys-authority-server
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 5d664600-38cc-4862-bf65-d1e24ca6ce59
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://rm-bp1cp68o8t1gq604p5o.mysql.rds.aliyuncs.com/sparksys_authorization?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
+    username: zhouxinlei
+    password: zxl298828
+  redis:
+    host: 47.114.40.129
+    port: 6379
+    time-out: 28800
+    database: 0
+    jedis:
+      pool:
+        max-active: 20
+        max-wait: 200
+        min-idle: 0
+dubbo:
+  scan:
+    base-packages: com.sparksys.authority.infrastructure.client
+  # Dubbo 服务暴露的协议配置，对应 ProtocolConfig Map
+  protocols:
+    dubbo:
+      name: dubbo # 协议名称
+      port: -1 # 协议端口，-1 表示自增端口，从 20880 开始
+  # Dubbo 服务注册中心配置，对应 RegistryConfig 类
+  registry:
+    address: spring-cloud://127.0.0.1:8848 # 指定 Dubbo 服务注册中心的地址
+  cloud:
+    subscribed-services: '' # 设置订阅的应用列表，默认为 * 订阅所有应用
