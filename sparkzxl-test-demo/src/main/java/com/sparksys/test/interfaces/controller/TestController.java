@@ -1,5 +1,6 @@
 package com.sparksys.test.interfaces.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.github.sparkzxl.log.annotation.WebLog;
 import com.github.sparkzxl.web.annotation.ResponseResult;
 import com.github.sparkzxl.authority.api.UserService;
@@ -30,6 +31,7 @@ public class TestController {
 
     @GetMapping("/test")
     @ApiOperation("test dubbo")
+    @SentinelResource("demo_product_info_hot")
     public UserDTO testDubbo(@RequestParam("userId") Long userId) {
         return userService.getById(userId);
     }
