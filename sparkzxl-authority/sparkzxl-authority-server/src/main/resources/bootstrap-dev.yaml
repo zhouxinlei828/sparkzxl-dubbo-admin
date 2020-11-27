@@ -33,9 +33,7 @@ spring:
       enabled: true
       eager: true # 是否饥饿加载。默认为 false 关闭
       transport:
-        dashboard: 47.116.52.58:8858 # Sentinel 控制台地址
-      filter:
-        url-patterns: /**
+        dashboard: 127.0.0.1:8858 # Sentinel 控制台地址
 dubbo:
   scan:
     base-packages: com.github.sparkzxl.authority.interfaces.rpc

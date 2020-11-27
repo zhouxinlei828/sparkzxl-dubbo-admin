@@ -5,6 +5,7 @@ import com.github.sparkzxl.authority.infrastructure.convert.AuthUserConvert;
 import com.github.sparkzxl.authority.infrastructure.entity.AuthUser;
 import com.github.sparkzxl.authority.domain.repository.IAuthUserRepository;
 import com.github.sparkzxl.authority.dto.UserDTO;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author: zhouxinlei
  * @date: 2020-09-04 13:35:39
  */
-@Service(protocol = "dubbo", version = "1.0.0")
+@DubboService(protocol = "dubbo", version = "1.0.0")
 public class UserServiceImpl implements UserService {
 
     @Autowired

@@ -6,7 +6,7 @@ import com.github.sparkzxl.authority.api.UserService;
 import com.github.sparkzxl.authority.dto.UserDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "测试管理")
 public class TestController {
 
-    @Reference(version = "1.0.0")
+    @DubboReference(version = "1.0.0",protocol = "dubbo",mock = "true")
     private UserService userService;
 
     @GetMapping("/test")

@@ -48,7 +48,7 @@ spring:
       enabled: true
       eager: true # 是否饥饿加载。默认为 false 关闭
       transport:
-        dashboard: 47.116.52.58:8858 # Sentinel 控制台地址
+        dashboard: 127.0.0.1:8858 # Sentinel 控制台地址
   datasource:
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
     url: jdbc:p6spy:mysql://rm-bp1cp68o8t1gq604p5o.mysql.rds.aliyuncs.com/sparksys_authorization?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8

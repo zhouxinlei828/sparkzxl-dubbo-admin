@@ -13,5 +13,12 @@
     <version>${sparkzxl-dubbo.version}</version>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.github.sparkzxl</groupId>
+            <artifactId>sparkzxl-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
 </project>
