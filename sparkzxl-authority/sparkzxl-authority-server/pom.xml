@@ -15,12 +15,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
+            <groupId>com.github.sparkzxl</groupId>
+            <artifactId>sparkzxl-distributed-dubbo-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>com.github.sparkzxl</groupId>

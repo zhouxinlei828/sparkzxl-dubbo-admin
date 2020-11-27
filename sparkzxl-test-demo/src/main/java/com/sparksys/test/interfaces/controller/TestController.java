@@ -2,8 +2,8 @@ package com.sparksys.test.interfaces.controller;
 
 import com.github.sparkzxl.log.annotation.WebLog;
 import com.github.sparkzxl.web.annotation.ResponseResult;
-import com.sparksys.authority.api.UserService;
-import com.sparksys.authority.dto.UserDTO;
+import com.github.sparkzxl.authority.api.UserService;
+import com.github.sparkzxl.authority.dto.UserDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.dubbo.config.annotation.Reference;

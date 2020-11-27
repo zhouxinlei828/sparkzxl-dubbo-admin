@@ -1,0 +1,53 @@
+server:
+  shutdown: graceful
+  port: 8902
+  undertow:
+    buffer-size: 1024
+    direct-buffers: on
+    always-set-keep-alive: true
+spring:
+  application:
+    name: sparkzxl-authority-server
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.116.52.58:8086
+        namespace: 2093ac51-9ced-4336-86e3-096d81e3c252
+      config:
+        server-addr: 47.116.52.58:8086
+        namespace: 2093ac51-9ced-4336-86e3-096d81e3c252
+        file-extension: yaml
+        prefix: ${spring.application.name}
+        shared-configs:
+          - dataId: redis.yaml
+            group: DEFAULT_GROUP
+            refresh: false
+          - dataId: common.yaml
+            group: DEFAULT_GROUP
+            refresh: false
+        enable-remote-sync-config: true
+        refresh-enabled: true
+    sentinel:
+      eager: true # 是否饥饿加载。默认为 false 关闭
+      transport:
+        dashboard: 47.116.52.58:8858 # Sentinel 控制台地址
+dubbo:
+  scan:
+    base-packages: com.sparksys.authority.interfaces.rpc
+  # Dubbo 服务暴露的协议配置，对应 ProtocolConfig Map
+  protocols:
+    dubbo:
+      name: dubbo # 协议名称
+      port: -1 # 协议端口，-1 表示自增端口，从 20880 开始
+  # Dubbo 服务注册中心配置，对应 RegistryConfig 类
+  registry:
+    address: spring-cloud://127.0.0.1:8848 # 指定 Dubbo 服务注册中心的地址
+  cloud:
+    subscribed-services: '' # 设置订阅的应用列表，默认为 * 订阅所有应用
+logging:
+  level:
+    com.github.sparkzxl.oauth.infrastructure.mapper: debug
+  file:
+    path: /Users/fin-9062/logs/${spring.application.name}
