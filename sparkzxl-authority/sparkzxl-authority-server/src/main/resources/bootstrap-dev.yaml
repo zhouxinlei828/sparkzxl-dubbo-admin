@@ -54,4 +54,4 @@ logging:
     com.github.sparkzxl.authority.infrastructure.client: debug
     com.github.sparkzxl.authority.infrastructure.mapper: debug
   file:
-    path: /logs/${spring.application.name}
+    path: /Users/fin-9062/logs/${spring.application.name}
