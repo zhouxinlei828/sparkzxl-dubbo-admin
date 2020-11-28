@@ -33,7 +33,7 @@ spring:
       enabled: true
       eager: true # 是否饥饿加载。默认为 false 关闭
       transport:
-        dashboard: 127.0.0.1:8858 # Sentinel 控制台地址
+        dashboard: 192.168.193.128:8858 # Sentinel 控制台地址
 dubbo:
   scan:
     base-packages: com.github.sparkzxl.authority.interfaces.rpc
@@ -54,4 +54,4 @@ logging:
     com.github.sparkzxl.authority.infrastructure.client: debug
     com.github.sparkzxl.authority.infrastructure.mapper: debug
   file:
-    path: /Users/fin-9062/logs/${spring.application.name}
+    path: /logs/${spring.application.name}

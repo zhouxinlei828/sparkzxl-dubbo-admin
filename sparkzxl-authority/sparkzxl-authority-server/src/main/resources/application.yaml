@@ -8,4 +8,4 @@ logging:
     com.sparksys.authority.infrastructure.client: debug
     com.sparksys.authority.infrastructure.mapper: debug
   file:
-    path: /Users/fin-9062/logs/${spring.application.name}
+    path: /logs/${spring.application.name}

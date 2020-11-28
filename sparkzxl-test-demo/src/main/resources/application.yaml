@@ -5,4 +5,4 @@ spring:
     allow-bean-definition-overriding: true
 logging:
   file:
-    path: /Users/fin-9062/logs/${spring.application.name}
+    path: /logs/${spring.application.name}

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sparksys-authority-server</artifactId>
+    <artifactId>sparkzxl-authority-server</artifactId>
     <version>${sparkzxl-dubbo.version}</version>
     <packaging>jar</packaging>
 
